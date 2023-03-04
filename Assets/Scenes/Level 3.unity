@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 640642541}
   m_Layer: 0
   m_Name: Enemy Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -647,14 +647,14 @@ MonoBehaviour:
   playerTransform: {fileID: 878322790}
   spawnDelay: 2
   moveSpeed: 2
-  shootDelay: 1
+  shootDelay: 0.1
   bulletSpeed: 5
   bulletPrefab: {fileID: 7052176136203218240, guid: cb718b85126f99646a8414ca111354ca, type: 3}
-  enemiesToSpawn: 5
-  enemiesToDestroy: 2
+  enemiesToSpawn: 15
+  enemiesToDestroy: 15
   enemyFire: {fileID: 6041789422878098822, guid: 3112da54add0c454aa292d5a31330600, type: 3}
   timerText: {fileID: 1328586753}
-  timeRemaining: 15
+  timeRemaining: 60
 --- !u!4 &640642542
 Transform:
   m_ObjectHideFlags: 0
@@ -1306,6 +1306,64 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5284908856677950077, guid: 8adf654d27629c142b12b21dee3dd457, type: 3}
   m_PrefabInstance: {fileID: 1389595338}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1445579295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1445579297}
+  - component: {fileID: 1445579296}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Stop
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1445579296
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445579295}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04115665, y: -2.9648767}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.8135014, y: 0.07979679}
+  m_EdgeRadius: 0
+--- !u!4 &1445579297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445579295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492794289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,14 +1789,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8406168381417889505, guid: 488afa2275a1dca49b07e68c0fcb699b, type: 3}
-      propertyPath: fireRate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8406168381417889505, guid: 488afa2275a1dca49b07e68c0fcb699b, type: 3}
-      propertyPath: bulletPrefabs.Array.size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8406168381417889505, guid: 488afa2275a1dca49b07e68c0fcb699b, type: 3}
       propertyPath: bulletPrefabs.Array.data[0]
       value: 

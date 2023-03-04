@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
-  Health: 20
+  Health: 5
   particleBlast: {fileID: 1730338621821775202, guid: 5f4e9644323075a4aa1bfb891583bbea, type: 3}
   playerHealth: {fileID: 0}
   audioSource: {fileID: 3834033350617462151}
@@ -151,7 +151,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70810bfb01f01af4c84141d6eb3d29ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5284908856677950077, guid: 8adf654d27629c142b12b21dee3dd457, type: 3}
+  bulletPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   firePoint: {fileID: 8406168380329726708}
   fireRate: 8
   audioSource: {fileID: 3834033350617462151}
