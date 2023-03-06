@@ -45,8 +45,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void Update()
-    {
-        // Update the timer text
+    { 
         timeRemaining -= Time.deltaTime;
         timerText.text = "00 :  "  + Mathf.RoundToInt(timeRemaining);
 

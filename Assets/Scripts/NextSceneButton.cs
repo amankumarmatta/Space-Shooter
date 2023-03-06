@@ -7,6 +7,8 @@ public class NextSceneButton : MonoBehaviour
     public Button nextSceneButton;
     public Button Home;
     public Button tryAgain;
+    
+
 
     void Start()
     {
@@ -32,6 +34,6 @@ public class NextSceneButton : MonoBehaviour
 
     public void TryAgain()
     {
-        SceneManager.LoadScene(lastSceneIndex);
+        SceneManager.LoadScene("Level Select");
     }
 }
