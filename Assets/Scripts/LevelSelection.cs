@@ -1,46 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
-    public int numberOfLevels = 5;
-    public string levelSceneNamePrefix = "Level";
+    // Create an array of Buttons to represent each level button
     public Button[] levelButtons;
 
     private void Start()
-    {       
-        for (int i = 1; i < numberOfLevels; i++)
+    {
+        // Loop through the levelButtons array and add listeners to each button
+        for (int i = 0; i < levelButtons.Length; i++)
         {
-            if (!IsLevelUnlocked(i + 1))
-            {
-                levelButtons[i].interactable = false;
-            }
+            int levelIndex = i + 1; // Level indices start from 1
+            levelButtons[i].onClick.AddListener(() => LoadLevel(levelIndex));
         }
     }
 
-    public void SelectLevel(int levelNumber)
+    private void LoadLevel(int levelIndex)
     {
-        if (levelNumber == 1)
-        {
-            SceneManager.LoadScene(levelSceneNamePrefix + " 1");
-        }
-        else
-        {
-            bool isUnlocked = IsLevelUnlocked(levelNumber);
-            if (isUnlocked)
-            {
-                SceneManager.LoadScene(levelSceneNamePrefix + levelNumber);
-            }
-            else
-            {
-                Debug.Log("Level " + levelNumber + " is locked!");
-            }
-        }
-    }
-    private bool IsLevelUnlocked(int levelNumber)
-    {
-        return (levelNumber == 1 || PlayerPrefs.GetInt("Level" + levelNumber.ToString()) == 1);
+        string sceneName = "Level " + levelIndex;
+        SceneManager.LoadScene(sceneName);
     }
 }
-
