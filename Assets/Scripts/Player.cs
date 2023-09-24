@@ -50,12 +50,13 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
             isDragging = true;
             dragStartPosition = Input.mousePosition;
         }
-        else if (Input.GetMouseButtonUp(0))
+        
+        else if (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
         {
             isDragging = false;
         }
@@ -66,7 +67,7 @@ public class Player : MonoBehaviour
 
             if (Input.touchCount > 0)
             {
-                swipeDelta = (Vector3)Input.GetTouch(0).position - dragStartPosition;
+                swipeDelta = (Vector3)Input.GetTouch(0).deltaPosition;
             }
             else if (Input.GetMouseButton(0))
             {
@@ -113,6 +114,7 @@ public class Player : MonoBehaviour
         }
     }
 }
+
 
 
 
