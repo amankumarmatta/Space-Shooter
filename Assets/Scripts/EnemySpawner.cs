@@ -60,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Vector3 direction = (playerTransform.position - enemy.transform.position).normalized;
                     GameObject bullet = Instantiate(bulletPrefab, enemy.transform.position + direction, Quaternion.identity);
-                    bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+                    bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * bulletSpeed;
                 }
             }
         }
